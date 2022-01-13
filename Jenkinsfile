@@ -152,6 +152,7 @@ spec:
             sed -i 's/tag: v1.0.*/tag: v1.0.${env.BUILD_ID}/' values.yaml
             cat values.yaml
             git commit -am 'bump up version number'
+            echo "the token is $env.DEPLOY_GITREPO_TOKEN"
             git remote set-url origin https://$env.DEPLOY_GITREPO_USER:$env.DEPLOY_GITREPO_TOKEN@$env.DEPLOY_GITREPO_URL
             git push origin main
           """

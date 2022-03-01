@@ -130,7 +130,9 @@ spec:
       }
     }
     stage('Image Vulnerability Scan_By NeuVector') {
+      steps {
       neuvector registrySelection: 'harbor_aws', repository: 'library/samples/spring-petclinic'
+      }
     }
     stage('Approval') {
       input {

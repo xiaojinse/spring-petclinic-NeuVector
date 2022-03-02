@@ -125,7 +125,7 @@ spec:
     }
     stage('Image Vulnerability Scan_By NeuVector') {
       steps {
-      neuvector registrySelection: 'harbor_aws', repository: '/library/samples/spring-petclinic:v1.0.${env.BUILD_ID}'
+      neuvector registrySelection: 'harbor_aws', repository: 'library/java/*'
       }
     }
     stage('Approval') {

@@ -125,7 +125,7 @@ spec:
     }
     stage('Image Vulnerability Scan_By NeuVector') {
       steps {
-      neuvector registrySelection: 'harbor_aws', repository: 'library/java'
+      neuvector registrySelection: 'harbor_aws', repository: 'library/myjenkins', tag: 'v1.0'
       }
     }
     stage('Approval') {

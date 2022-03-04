@@ -76,9 +76,7 @@ spec:
         }
       }
     }
-    stage('Test') {
-      parallel {
-        stage(' Unit/Integration Tests') {
+    stage(' Unit/Integration Tests') {
           steps {
             container('maven') {
               sh """
@@ -99,10 +97,6 @@ spec:
             }
           } 
         }
-
-        }  
-      }
-    }
     stage('Containerize') {
       steps {
         container('kaniko') {
